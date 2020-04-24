@@ -15,10 +15,14 @@
  */
 
 plugins {
+  `java-gradle-plugin`
+  `kotlin-dsl`
+  `maven-publish`
   id("org.jlleitschuh.gradle.ktlint") version "9.2.1"
   id("org.jlleitschuh.gradle.ktlint-idea") version "9.2.1"
   id("io.spring.dependency-management") version "1.0.9.RELEASE"
   id("com.github.ben-manes.versions") version "0.28.0"
+  id("com.gradle.plugin-publish") version "0.11.0"
 }
 
 apply(plugin = "io.spring.dependency-management")
@@ -32,5 +36,29 @@ repositories {
   jcenter()
 }
 
+gradlePlugin {
+  (plugins) {
+    register("flatbuffersPlugin") {
+      id = "dev.north.fortyone.flatbuffers"
+      displayName = "Gradle FlatBuffers plugin"
+      description = "Gradle plugin aimed for easing compilation of FlatBuffers sources with docker"
+      implementationClass = "dev.north.fortyone.gradle.flatbuffers.FlatBuffersPlugin"
+    }
+  }
+}
+
+pluginBundle {
+  website = "https://github.com/41north/gradle-flatbuffers-plugin"
+  vcsUrl = "https://github.com/41north/gradle-flatbuffers-plugin"
+  tags = listOf("flatbuffers", "kotlin-dsl", "docker")
+}
+
 dependencies {
+  gradleApi()
+}
+
+publishing {
+  repositories {
+    maven(url = "build/repository")
+  }
 }
