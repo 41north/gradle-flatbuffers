@@ -1,8 +1,8 @@
 <h1 align="center">✨ Gradle FlatBuffers Plugin ✨</h1>
 
 <p align="center">
-  <a href="https://github.com/41north/gradle-flatbuffers-plugin/workflows/KtLint/badge.svg">
-    <img alt="KtLint" height="20px" src="https://github.com/41north/gradle-flatbuffers-plugin/workflows/KtLint/badge.svg" />
+  <a href="https://github.com/41north/gradle-flatbuffers-plugin/workflows/build/badge.svg">
+    <img alt="Build Status" height="20px" src="https://github.com/41north/gradle-flatbuffers-plugin/workflows/build/badge.svg" />
   </a>
   <a href="https://github.com/41north/gradle-flatbuffers-plugin?style=flat-square">
     <img alt="Gradle FlatBuffers Plugin License" height="20px" src="https://img.shields.io/github/license/41north/gradle-flatbuffers-plugin?style=flat-square" />
@@ -41,13 +41,6 @@ flatbuffers {
 ```
 
 A `flatbuffers` source set will be available like a regular `java` or `kotlin`, so you can add your source code like usual.
-
-## 🗒️ Roadmap
-
-* Add proper tests
-* Add examples
-* Improve documentation
-* ...
 
 ## 💻 Contribute
 
